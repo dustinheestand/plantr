@@ -47,4 +47,4 @@ for (let i = 0; i < 5; i++) {
     });
 }
 
-module.exports = db;
+module.exports = { db, Gardener, Vegetable, Plot };
