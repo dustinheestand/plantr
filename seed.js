@@ -24,8 +24,6 @@ function makeVegetables() {
   }
 }
 
-const vegPromise = 'a';
-
 db.sync({ force: true })
   .then(() => makeVegetables())
   .then(() => db.sync())

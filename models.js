@@ -25,26 +25,4 @@ Plot.belongsToMany(Vegetable, { through: 'vegetable_plot' });
 Vegetable.belongsToMany(Plot, { through: 'vegetable_plot' });
 Vegetable.hasMany(Gardener, { as: 'favorite_vegetable' });
 
-const vegetableNames = ['eggplant', 'pepper', 'horse', 'radish', 'dirt'];
-const vegetableColors = ['brown', 'brown', 'white', 'white', 'brown'];
-const vegetableDates = [
-  Date.now(),
-  Date.now() - 1000000,
-  Date.now(),
-  Date.now() + 799999,
-  Date.now()
-];
-
-for (let i = 0; i < 5; i++) {
-  Vegetable.create({
-    name: vegetableNames[i],
-    color: vegetableColors[i],
-    planted_on: vegetableDates[i]
-  })
-    .then()
-    .catch(() => {
-      console.log(`${vegetableNames[i]} failed!`);
-    });
-}
-
 module.exports = { db, Gardener, Vegetable, Plot };
